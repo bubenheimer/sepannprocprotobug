@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        google()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0-alpha12'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.6'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+ext {
+    javaVersion = JavaVersion.VERSION_1_8
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
